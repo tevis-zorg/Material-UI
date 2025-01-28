@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+  background-image: linear-gradient(to top, #33ccff 25%, #ff99cc 85%);
+  border-radius: 8px;
+}
+
+.btn-dec{
+  background-image: linear-gradient(to top, #fb2f2f 25%, #ff99cc 85%);
+}
+
+.btn-res{
+  background-image: linear-gradient(to bottom, #ffea02 25%, #ff99cc 85%);
+}
+
+.btn-inc{
+  background-image: linear-gradient(to top, #4bff33 25%, #ff99cc 85%);
+}
+
+.result {
+  display:flex;
+  justify-content: center;
+  background-color: #350066;
+  border: 8px;
+  background-image: linear-gradient(to bottom, #ae095b, #80e193);
+  border-radius: 8px;
+}
