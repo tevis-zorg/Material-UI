@@ -2,6 +2,7 @@
 
 What i learn in section-3:
 
+- Mapping methods to render each component to work with Material UI rules
 - implementing a reusable Component into a sub component
 - Using Material UI props and material icons
 - Setup seperate module components
