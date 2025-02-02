@@ -1,8 +1,6 @@
 import React from 'react'
 
 import { colors, Grid2 } from '@mui/material'
-import { Badge } from '@mui/icons-material'
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
 import CommonButton from '../../components/common/CommonButton'
 
@@ -44,35 +42,14 @@ const Authentication = () => {
             margin={'0 0 0 500px'}
             
             >
+            <div style={{display:'flex',flexDirection:'column',alignItems:'center', backgroundColor:'purple'}}>
+                <h1>
+                    This is Authentication page
+                </h1>
+            </div>
 
-            <h1>
-                This is Authentication page
-            </h1>
 
-
-            <CommonButton
-                sx={buttonStyles}
-                variant="contained"
-                // onClick={() => console.log("Submit button are clicked!")}
-            >
-                Submit
-            </CommonButton>
-
-            <CommonButton
-                sx={buttonStyles}
-                variant="outlined"
-                // onClick={() => console.log("Add user is clicked!")}
-            >
-                Add user
-            </CommonButton>
-            <CommonButton
-                sx={buttonStyles}
-                variant="secondary"
-                disabled={true}
-                // onClick={() => console.log("Remove user is clicked!")}
-            >
-                Remove user
-            </CommonButton>
+            
 
         </Grid2>
         

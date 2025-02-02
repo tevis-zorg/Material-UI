@@ -1,81 +1,61 @@
-import React from 'react'
+import React , {useState} from 'react'
 
-import { Grid2 } from '@mui/material';
+import { Grid2, makeStyles } from '@mui/material';
 
 import CommonBarChart from '../../components/common/CommonBarChart';
 import CommonPieChart from '../../components/common/CommonPieChart';
+import UnifiedChart from '../../components/common/UnifiedChart';
 
+import { PieChart } from '@mui/x-charts';
+import { BarChart } from '@mui/x-charts';
+
+// dataset imports
 import { 
 
     valueFormatter,
     desktopOS, 
+    mobileAndDesktopOS,
     mobileOS, 
     seriesA, 
     seriesB, 
-    seriesC 
+    seriesC,
 
 } from '../../components/common/datasets/datasets';
 
+// const useStyle = makeStyles((theme) => ({
+//     parallax: {
+//         width : '100%',
+//         height : `${window.innerHeight}px`,
+//         position: 'relative',
+//     }
+// }))
 
 
 const Analysist = () => {
-
-    const barStyle = {
-        scaleType:'band'
-    }    
+    // const classes = useStyle();
+    const [highlightedItem, setHighlightedItem] = useState(null);
 
     return (
     <>
-        <Grid2 container style={{marginLeft:"500px"}}>
-
-            <CommonBarChart
-            // xAxis = {
-            //     [
-            //         {
-            //             scaleType: 'band',
-            //             data: [
-            //                 seriesA.label,
-            //                 seriesB.label,
-            //                 seriesC.label,
-            //             ]
-            //         }
-            //     ]
-            // }
-            width={500}
-            height={300}
-            series= {
-                [
-                    {...seriesA, stack: 'total', color:"#333"},
-                    {...seriesB, stack: 'total'},
-                    {...seriesC, stack: 'total'},
-                ]
-            }
-            sx={barStyle}
-            />
-
-            <CommonPieChart
-                series={
-                    [
-                        {
-                            data:desktopOS,
-                            highlightScope: {
-                                fade: 'global',
-                                highlight: 'item',
-                            },
-                            faded: {
-                                innerRadius: 30,
-                                additionalRadius: -30,
-                                color: 'gray',
-                                valueFormatter,
-                            }
-                        }
-                    ]
+        <Grid2 
+            container 
+            style={
+                {
+                    display:'inline-flex',
+                    marginLeft:"500px"
                 }
-                height={400}
-                // sx={pieChartDesktopStyle}
-            />
-
-            <CommonPieChart
+            }
+            sx={
+                {
+                    width: '100%',
+                    height: 500,
+                }
+            }
+            // className = {classes.parallax}
+        
+            >
+            
+            {/* <CommonPieChart
                 series={[
                     {
                         data: mobileOS,
@@ -91,18 +71,69 @@ const Analysist = () => {
                         }
                     }
                 ]}
-                height={350}
+            /> */}
+
+            {/* <CommonBarChart
+                {...barChartProps}
+                highlightedItem = {highlightedItem}
+                onHighlightChange = {setHighlightedItem}
             />
 
+            <CommonPieChart
+                {...pieChartProps}
+                highlightedItem = {highlightedItem}
+                onHighlightChange = {setHighlightedItem}
+            /> */}
+
+            {/* <BarChart
+                {...barChartProps}
+                highlightedItem = {highlightedItem}
+                onHighlightChange = {setHighlightedItem}
+            />
+
+            <PieChart
+                {...pieChartProps}
+                highlightedItem = {highlightedItem}
+                onHighlightChange = {setHighlightedItem}
+            /> */}
+
+            {/* <UnifiedChart
+                chartType="bar"
+                {...barChartProps}
+                // highlightedItem = {highlightedItem}
+                // onHighlightChange={setHighlightedItem}
+            />
+
+            <UnifiedChart
+                chartType="pie"
+                {...pieChartProps}
+                // highlightedItem = {highlightedItem}
+                // onHighlightChange={setHighlightedItem}
+            /> */}
+
+            <UnifiedChart/>
+
+
+
         </Grid2>
 
-        <Grid2 container style={
-            {
-                marginLeft: "500px",
+        {/* <Stack
+            direction={{xs: 'column', xl:'row'}}
+            style={
+                {
+                    display:'flex',
+                    margin:"0, auto"
+                }
             }
-        }>
+            sx={
+                {
+                    width: '100%',
+                    height: 500,
+                }
+            }
+                    >
+        </Stack> */}
 
-        </Grid2>
     
     </>
     )

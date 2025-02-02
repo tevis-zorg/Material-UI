@@ -1,27 +1,33 @@
 // Pie chart dataset
 export const desktopOS = [
     {
+      // id: 'Windo',
       label: 'Windows',
       value: 42.72,
     },
     {
-        label: "Mac Os",
-        value: 26.62,
-        color:'#333'
+      // id: 'Mac OS',
+      label: "Mac OS",
+      value: 26.62,
+      color:'#333'
     },
     {
+      // id: 'OS X',
       label: 'OS X',
       value: 16.38,
     },
     {
+      // id: 'Linux',
       label: 'Linux',
       value: 3.83,
     },
     {
+      // id: 'Chrome',
       label: 'Chrome OS',
       value: 2.42,
     },
     {
+      // id: 'Other',
       label: 'Other',
       value: 4.65,
     },
@@ -68,12 +74,6 @@ export const seriesC = {
     label: 'Series C',
 };
 
-const pieChartDesktopStyle = {
-    '&.pieArcLabelClasses.root' : {
-        fontWeight: 'bold',
-    },
-}
-
 const normalizing = (v, v2) => Number.parseFloat(((v * v2) / 100).toFixed(2));
 
 export const mobileAndDesktopOS = [
@@ -90,3 +90,71 @@ export const mobileAndDesktopOS = [
 ];
 
 export const valueFormatter = (item) => `${item.value}%`;
+
+export const barChartProps = {
+  series: [
+      {
+          id: "sync",
+          // data: desktopOS.map(item => item.value),
+          data: mobileAndDesktopOS.map(item => item.value),
+          highlightScope: {
+              highlight: 'item',
+              fade: 'global',
+          },
+          faded: {
+              color: 'gray',
+          }
+      },
+  ],
+
+  xAxis : [
+      {
+          scaleType: 'band',
+          // data: desktopOS.map(item => item.label),
+          data: mobileAndDesktopOS.map(item => item.label)
+      }
+  ],
+  height: 350,
+  slotProps:  {
+          legend: {
+              hidden: true,
+      },
+  },
+};
+
+export const pieChartProps = {
+  series : [
+      {
+          id: "sync",
+          data: 
+          // desktopOS.map(
+          //     item => 
+          //         (
+          //             {
+          //                 id: item.label,
+          //                 label: item.label,
+          //                 value: item.value,
+          //             }
+          //         )
+          // ),
+          mobileAndDesktopOS,
+          // sync between fades are not working well.
+          // try to sync it with the bar chart.
+          highlightScope: {
+              highlight: 'item', 
+              fade: 'global',
+          },
+          faded: {
+              innerRadius: 35,
+              additionalRadius: -35,
+              color: 'gray',
+          }
+      }
+  ],
+  height: 350,
+  slotProps: {
+      legend: {
+          hidden: true,
+      },
+  },
+};

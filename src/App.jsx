@@ -15,7 +15,7 @@ import Navbar from './components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  
   return (
     <>
     {/* Using Grid2 for the contents so the Compnents won't overrides the child */}

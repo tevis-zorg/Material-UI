@@ -1,5 +1,3 @@
-import React from 'react'
-
 
 import { BarChart } from '@mui/x-charts/BarChart'
 
@@ -11,6 +9,8 @@ const CommonBarChart = ({xAxis, width, height, series,sx}) => {
         height={height}
         series={series}
         sx={sx}
+        highlightedItem={null}
+        onHighlightChange={null}
     />
   )
 }

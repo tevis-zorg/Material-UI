@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.parallax {
+  will-change: transform;
+}
+
 .btn {
   display: flex;
   justify-content: center;
