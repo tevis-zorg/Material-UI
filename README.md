@@ -1,8 +1,10 @@
-# React + Vite
+# Analyst page (bar and pie chart)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**#What i learned in this branch**
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Using chart component which takes up some dataset
+- Material UI props handling with mapping methods
+- Prop sharing consistency among charts could affects highlighted item's
+- How chart components interacts and render highlighted data on mouse hovering
+- Discovering possible approach along with its strengths and weaknesses
+- Related to previous point, minimizing the code while leveraging any other methods
